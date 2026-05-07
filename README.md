@@ -199,28 +199,6 @@ export PATH="$HOME/.local/bin:$PATH"
 ocareport -shape VM.Standard.E5.Flex -ocpu 2 -memory 8 -region ap-singapore-1,ap-singapore-2
 ```
 
-## Project Structure
-
-```text
-ocareport/
-├── ocareport/
-│   ├── __init__.py
-│   ├── __main__.py
-│   ├── cli.py            # Argument parsing and command orchestration
-│   ├── capacity.py       # Capacity report API calls and concurrent scanning
-│   ├── identity.py       # Authentication and OCI identity functions
-│   ├── models.py         # Result dataclasses
-│   ├── output.py         # table/json/csv renderers
-│   └── utils.py          # Terminal colors and formatting
-├── tests/                # Unit tests
-├── requirements.txt      # Runtime dependencies
-├── pyproject.toml        # Package configuration
-├── LICENSE               # MIT License
-├── README.md             # Project documentation
-├── CHANGELOG.md          # Version history
-└── CONTRIBUTING.md       # Contribution guidelines
-```
-
 ## Credits
 
 Inspired by Enrico Pesce - Project Link: [https://github.com/enricopesce/ocareport](https://github.com/enricopesce/ocareport)
