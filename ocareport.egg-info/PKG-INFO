@@ -2,14 +2,7 @@ Metadata-Version: 2.4
 Name: ocareport
 Version: 1.3.6
 Summary: Instantly check Oracle Cloud Infrastructure (OCI) compute capacity and shape availability across all regions. A powerful CLI tool for tracking VMs, bare metal, and high-demand GPUs like NVIDIA A100, H100, and L40S.
-Author-email: Enrico Pesce <enrico@enricopesce.it>
-Maintainer-email: Enrico Pesce <enrico@enricopesce.it>
 License: MIT
-Project-URL: Homepage, https://github.com/enricopesce/ocareport
-Project-URL: Documentation, https://github.com/enricopesce/ocareport#readme
-Project-URL: Repository, https://github.com/enricopesce/ocareport.git
-Project-URL: Issues, https://github.com/enricopesce/ocareport/issues
-Project-URL: Changelog, https://github.com/enricopesce/ocareport/blob/main/CHANGELOG.md
 Keywords: oci,oracle-cloud,oracle-cloud-infrastructure,cloud,compute,capacity,availability,gpu,vm,bare-metal,instance,shapes,flex-shapes,capacity-planning,capacity-report,resource-availability,infrastructure,devops,cloud-computing,cli,command-line,api,sdk,nvidia,a100,h100,a10,l40s,v100,gpu-availability,gpu-cloud,cloud-infrastructure,iaas,paas,resource-management,cloud-automation,python
 Classifier: Development Status :: 5 - Production/Stable
 Classifier: Environment :: Console
@@ -44,7 +37,6 @@ Dynamic: license-file
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![OCI SDK](https://img.shields.io/badge/OCI%20SDK-2.149.0+-orange.svg)](https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/)
-[![Tests](https://github.com/enricopesce/ocareport/actions/workflows/ci.yml/badge.svg)](https://github.com/enricopesce/ocareport/actions/workflows/ci.yml)
 
 **Check Oracle Cloud Infrastructure compute shape availability across all regions instantly.**
 
