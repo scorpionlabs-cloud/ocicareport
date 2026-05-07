@@ -189,16 +189,6 @@ That means OCI did not report enough capacity for that requested shape configura
 
 That shape is not supported in that location. Try another region or shape.
 
-## Development
-
-Install dependencies:
-
-```bash
-python3 -m pip install --user -e .
-export PATH="$HOME/.local/bin:$PATH"
-ocareport -shape VM.Standard.E5.Flex -ocpu 2 -memory 8 -region ap-singapore-1,ap-singapore-2
-```
-
 ## Credits
 
 Inspired by Enrico Pesce - Project Link: [https://github.com/enricopesce/ocareport](https://github.com/enricopesce/ocareport)
