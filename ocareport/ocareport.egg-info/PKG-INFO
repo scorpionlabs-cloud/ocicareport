@@ -2,6 +2,4 @@ Metadata-Version: 2.4
 Name: ocareport
 Version: 1.3.6
 Summary: Instantly check Oracle Cloud Infrastructure (OCI) compute capacity and shape availability across all regions. A powerful CLI tool for tracking VMs, bare metal, and high-demand GPUs like NVIDIA A100, H100, and L40S.
-Author-email: Enrico Pesce <enrico@enricopesce.it>
-Maintainer-email: Enrico Pesce <enrico@enricopesce.it>
 License: MIT
