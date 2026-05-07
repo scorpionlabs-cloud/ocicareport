@@ -9,12 +9,6 @@ description = "Instantly check Oracle Cloud Infrastructure (OCI) compute capacit
 readme = "README.md"
 license = {text = "MIT"}
 requires-python = ">=3.8"
-authors = [
-    {name = "Enrico Pesce", email = "enrico@enricopesce.it"}
-]
-maintainers = [
-    {name = "Enrico Pesce", email = "enrico@enricopesce.it"}
-]
 keywords = [
     # Primary keywords
     "oci",
@@ -90,13 +84,6 @@ dev = [
     "pytest-cov>=5.0.0",
     "ruff>=0.7.0"
 ]
-
-[project.urls]
-Homepage = "https://github.com/enricopesce/ocareport"
-Documentation = "https://github.com/enricopesce/ocareport#readme"
-Repository = "https://github.com/enricopesce/ocareport.git"
-Issues = "https://github.com/enricopesce/ocareport/issues"
-Changelog = "https://github.com/enricopesce/ocareport/blob/main/CHANGELOG.md"
 
 [project.scripts]
 ocareport = "ocareport.cli:main"
