@@ -114,7 +114,7 @@ python3 ocareport.pyz \
 ### Emit JSON
 
 ```bash
-ocareport -shape VM.Standard.E5.Flex -region all --workers 8 --output json
+python3 ocareport.pyz -shape VM.Standard.E5.Flex -region all --workers 8 --output json
 ```
 
 ### Emit CSV
